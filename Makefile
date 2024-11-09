@@ -1,8 +1,10 @@
 cc=gcc
 lib=-lwiringPi -lwiringPiDev
 
-make:
-	$(cc) text.c -o textToDisplay $(lib)
+TARGET=tempToDisplay
+
+make: $(TARGET).c
+	$(cc) $(TARGET).c -o $(TARGET) $(lib)
 
 clean: 
-	rm textToDisplay 
+	rm $(TARGET)
